@@ -13,6 +13,8 @@ public class Member {
     @Column(name = "MEMBER_ID")
     private Long id;
 
+    private String name;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "TEAM_ID")
     private Team team;
@@ -20,4 +22,12 @@ public class Member {
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "JOB_ID")
     private Job job;
+
+    public Member(String name) {
+        this.name = name;
+    }
+
+    public Member() {
+
+    }
 }
